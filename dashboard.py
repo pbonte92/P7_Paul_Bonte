@@ -6,7 +6,7 @@ import json
 from flask import Flask, request, jsonify, render_template
 
 
-path = "C:/Users/paul.bonte/Formation OC/P7_Bonte_Paul/P7_Paul_Bonte"
+path = "C:/Users/paul.bonte/Formation OC/P7_Bonte_Paul"
 df = pd.read_csv((path + "/train.csv"))
 valid_ids = df['SK_ID_CURR'].values.tolist()
 cols_no_graph = df[['SK_ID_CURR', 'TARGET']]

@@ -17,7 +17,7 @@ from flask import Flask, request, jsonify, render_template
 
 app = Flask(__name__)
 
-path = "C:/Users/paul.bonte/Formation OC/P7_Bonte_Paul/P7_Paul_Bonte"
+path = "C:/Users/paul.bonte/Formation OC/P7_Bonte_Paul"
 data = pd.read_csv(path + "/data.csv")
 model = pickle.load(open(path + "/model_credit.pkl","rb"))
 exp = data.drop(columns = ["SK_ID_CURR"])
