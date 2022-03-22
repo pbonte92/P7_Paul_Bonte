@@ -40,6 +40,13 @@ def get_prediction(model , X):
     resultat = model.predict_proba(X)[0]
     return resultat
 
+@app.route("/")
+def hello():
+    """
+    Ping the API.
+    """
+    return jsonify({"text":"Hello, the API is up and running..." })
+
 
 @app.route('/predict', methods=['POST'])
 def predict():
