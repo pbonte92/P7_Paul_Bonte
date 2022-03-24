@@ -17,10 +17,9 @@ from flask import Flask, request, jsonify
 
 app = Flask(__name__)
 
-path = "C:/Users/paul.bonte/Formation OC/P7_Bonte_Paul"
-path2 = "C:/Users/paul.bonte/Formation OC/P7_Bonte_Paul/P7_Paul_Bonte"
+path = "C:/Users/paul.bonte/Formation OC/P7_Bonte_Paul/P7_Paul_Bonte/API/Extra"
 data = pd.read_csv(path + "/data.csv")
-model = pickle.load(open(path2 + "/model_credit.pkl","rb"))
+model = pickle.load(open(path + "/model_credit.pkl","rb"))
 exp = data.drop(columns = ["SK_ID_CURR"])
 
 explainer = lime_tabular.LimeTabularExplainer(
