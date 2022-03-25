@@ -32,7 +32,7 @@ def filter_dataset():
 
 def get_prediction(client_id):
     
-        url = 'http://127.0.0.1:5000/predict'
+        url = 'https://apipaul.herokuapp.com//predict'
         param = {'id_client' : client_id}
         # Post JSON file
         r = requests.post(url, json = param)
@@ -45,7 +45,7 @@ def get_prediction(client_id):
         
 def get_explainer(client_id):
     
-        url = 'http://127.0.0.1:5000/lime'
+        url = 'https://apipaul.herokuapp.com//lime'
         param = {'id_client' : client_id}
         # Post JSON file
         r = requests.post(url, json = param)
