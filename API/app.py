@@ -18,9 +18,12 @@ import os
 
 app = Flask(__name__)
 
-path = "C:/Users/paul.bonte/Formation OC/P7_Bonte_Paul/P7_Paul_Bonte/API/Extra"
-data = pd.read_csv(path + "/data.csv")
-model = pickle.load(open(path + "/model_credit.pkl","rb"))
+path = os.path.dirname(os.path.abspath(__file__))
+
+
+data = pd.read_csv(path  + "//data.csv")
+model = pickle.load(open(path  + "/model_credit.pkl","rb"))
+
 exp = data.drop(columns = ["SK_ID_CURR"])
 
 explainer = lime_tabular.LimeTabularExplainer(
@@ -78,11 +81,8 @@ def explain() :
     explained = pd.DataFrame.to_dict(explained)
       
     return jsonify(explained)
-    
-    
-    
 
+    
 if __name__ == "__main__":
-    #port = os.environ.get("PORT" , 5000)
-    #debug= False , host="0.0.0.0" , port = port
-    app.run()
+    port = os.environ.get("PORT" , 5000)
+    app.run(debug= False , host="0.0.0.0" , port = port)
