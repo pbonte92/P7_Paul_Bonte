@@ -5,9 +5,10 @@ import pandas as pd
 import matplotlib.pyplot as plt
 #from flask import Flask, request, jsonify, render_template
 import requests
+import os
 
 
-path = "C:/Users/paul.bonte/Formation OC/P7_Bonte_Paul/P7_Paul_Bonte/dashboard"
+path = os.path.dirname(os.path.abspath(__file__))
 df = pd.read_csv((path + "/train.csv"))
 valid_ids = df['SK_ID_CURR'].values.tolist()
 cols_no_graph = df[['SK_ID_CURR', 'TARGET']]
